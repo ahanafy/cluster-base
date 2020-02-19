@@ -13,8 +13,12 @@ if [[ ! -x "$(command -v helm)" ]]; then
 fi
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
-REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
+# HTTPS git.url format
+REPO_URL='https://github.com/stefanprodan/gitops-istio.git'
+# SSH git.url format
+# REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
 REPO_BRANCH=master
+REPO_PUBLIC=true
 TEMP=${REPO_ROOT}/temp
 
 rm -rf ${TEMP} && mkdir ${TEMP}
@@ -36,6 +40,7 @@ helm upgrade -i flux fluxcd/flux --wait --cleanup-on-fail \
 --set git.url=${REPO_URL} \
 --set git.branch=${REPO_BRANCH} \
 --set git.pollInterval=1m \
+--set git.readonly=${REPO_PUBLIC} \
 --set registry.pollInterval=1m \
 --namespace flux
 
