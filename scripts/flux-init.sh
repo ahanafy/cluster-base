@@ -42,4 +42,4 @@ helm upgrade -i helm-operator fluxcd/helm-operator --wait --cleanup-on-fail \
 --namespace fluxcd
 
 echo '>>> GitHub deploy key'
-kubectl -n fluxcd logs deployment/flux | grep identity.pub | cut -d '"' -f2
+kubectl -n fluxcd logs deployment/fluxcd | grep identity.pub | cut -d '"' -f2
