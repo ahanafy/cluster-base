@@ -1,0 +1,21 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: flux
+  namespace: flux
+spec:
+  releaseName: flux
+  chart:
+    repository: https://charts.fluxcd.io
+    version: 1.2.0
+    name: flux
+  values:
+    replicaCount: 1
+    git:
+      url: 'https://github.com/ahanafy/cluster-base.git'
+      branch: 'master'
+      pollInterval: '1m'
+      readonly: TRUE
+      name: 'Flux Operator'
+    registry:
+      pollInterval: '1m'

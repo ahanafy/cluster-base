@@ -14,10 +14,10 @@ fi
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 # HTTPS git.url format
-REPO_URL='https://github.com/stefanprodan/gitops-istio.git'
+REPO_URL='https://github.com/ahanafy/cluster-base.git'
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
-REPO_BRANCH=master
+REPO_BRANCH='master'
 REPO_PUBLIC=true
 TEMP=${REPO_ROOT}/temp
 
@@ -42,6 +42,7 @@ helm upgrade -i flux fluxcd/flux --wait --cleanup-on-fail \
 --set git.pollInterval=1m \
 --set git.readonly=${REPO_PUBLIC} \
 --set registry.pollInterval=1m \
+--set manifestGeneration=true \
 --namespace flux
 
 cat <<EOF >> ${TEMP}/repositories.yaml
