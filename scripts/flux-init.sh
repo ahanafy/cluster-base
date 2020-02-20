@@ -72,10 +72,9 @@ configureRepositories:
 EOF
 
 echo ">>> Installing Helm Operator"
-helm upgrade -i helm-operator fluxcd/helm-operator --wait \
+helm upgrade -i helm-operator fluxcd/helm-operator --wait --cleanup-on-fail \
 --set git.ssh.secretName=flux-git-deploy \
 --set helm.versions=v3 \
---set createCRD=true \
 -f ${TEMP}/repositories.yaml \
 --namespace fluxcd
 
