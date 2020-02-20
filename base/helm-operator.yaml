@@ -7,7 +7,7 @@ spec:
   releaseName: helm-operator
   chart:
     repository: https://charts.fluxcd.io
-    version: 1.0.0-rc9
+    version: 0.7.0
     name: helm-operator
   values:
     chartsSyncInterval: 2m
