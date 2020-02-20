@@ -17,7 +17,7 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_URL='https://github.com/ahanafy/cluster-base.git'
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
-REPO_BRANCH='cleanup'
+REPO_BRANCH='master'
 REPO_PUBLIC=true
 
 echo ">>> Creating Flux Namespace"
