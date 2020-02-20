@@ -29,7 +29,7 @@ kubectl apply -f ${REPO_ROOT}/base/fluxcd/namespace.yaml
 helm repo add fluxcd https://charts.fluxcd.io
 
 echo ">>> Installing Flux for ${REPO_URL}"
-helm upgrade -i flux fluxcd/flux --wait --cleanup-on-fail \
+helm upgrade -i fluxcd fluxcd/flux --wait --cleanup-on-fail \
 --set git.url=${REPO_URL} \
 --set git.branch=${REPO_BRANCH} \
 --set git.pollInterval=1m \
