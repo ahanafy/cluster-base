@@ -42,6 +42,7 @@ helm upgrade -i flux fluxcd/flux --wait --cleanup-on-fail \
 --set git.pollInterval=1m \
 --set git.readonly=${REPO_PUBLIC} \
 --set registry.pollInterval=1m \
+--set manifestGeneration=true
 --namespace flux
 
 cat <<EOF >> ${TEMP}/repositories.yaml
