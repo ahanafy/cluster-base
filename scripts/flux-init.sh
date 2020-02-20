@@ -14,10 +14,10 @@ fi
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 # HTTPS git.url format
-REPO_URL='https://github.com/stefanprodan/gitops-istio.git'
+REPO_URL='https://github.com/ahanafy/cluster-base.git'
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
-REPO_BRANCH=master
+REPO_BRANCH='add-helm-release'
 REPO_PUBLIC=true
 TEMP=${REPO_ROOT}/temp
 
