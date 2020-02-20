@@ -17,21 +17,14 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_URL='https://github.com/ahanafy/cluster-base.git'
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
-REPO_BRANCH='master'
+REPO_BRANCH='cleanup'
 REPO_PUBLIC=true
 TEMP=${REPO_ROOT}/temp
 
 rm -rf ${TEMP} && mkdir ${TEMP}
 
-cat <<EOF >> ${TEMP}/namespace.yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: flux
-EOF
-
 echo ">>> Creating Flux Namespace"
-kubectl apply -f ${TEMP}/namespace.yaml
+kubectl apply -f ${REPO_ROOT}/base/fluxcd/namespace.yaml
 
 helm repo add fluxcd https://charts.fluxcd.io
 
@@ -43,7 +36,7 @@ helm upgrade -i flux fluxcd/flux --wait --cleanup-on-fail \
 --set git.readonly=${REPO_PUBLIC} \
 --set registry.pollInterval=1m \
 --set manifestGeneration=true \
---namespace flux
+--namespace fluxcd
 
 cat <<EOF >> ${TEMP}/repositories.yaml
 configureRepositories:
@@ -79,12 +72,12 @@ configureRepositories:
 EOF
 
 echo ">>> Installing Helm Operator"
-kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/flux-helm-release-crd.yaml
 helm upgrade -i helm-operator fluxcd/helm-operator --wait \
 --set git.ssh.secretName=flux-git-deploy \
 --set helm.versions=v3 \
+--set createCRD=true \
 -f ${TEMP}/repositories.yaml \
---namespace flux
+--namespace fluxcd
 
 echo '>>> GitHub deploy key'
-kubectl -n flux logs deployment/flux | grep identity.pub | cut -d '"' -f2
+kubectl -n fluxcd logs deployment/flux | grep identity.pub | cut -d '"' -f2

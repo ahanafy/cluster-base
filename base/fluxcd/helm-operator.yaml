@@ -2,7 +2,7 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: helm-operator
-  namespace: flux
+  namespace: fluxcd
 spec:
   releaseName: helm-operator
   chart:
@@ -10,7 +10,8 @@ spec:
     version: 0.7.0
     name: helm-operator
   values:
-    chartsSyncInterval: 2m
+    chartsSyncInterval: 3m
+    createCRD: true
     git:
       ssh:
         secretName: flux-git-deploy
