@@ -11,5 +11,3 @@
 
 helm delete flux -n fluxcd
 helm delete helm-operator -n fluxcd
-
-kubectl delete -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/flux-helm-release-crd.yaml
