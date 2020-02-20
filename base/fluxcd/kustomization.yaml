@@ -3,3 +3,4 @@ resources:
   - fluxcd.yaml
   - helm-operator.yaml
   - namespace.yaml
+  - repositories.yaml
