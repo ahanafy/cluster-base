@@ -13,7 +13,7 @@ spec:
     chartsSyncInterval: 3m
     git:
       ssh:
-        secretName: flux-git-deploy
+        secretName: fluxcd-git-deploy
     helm:
       versions: v3
     configureRepositories:

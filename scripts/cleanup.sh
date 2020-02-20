@@ -9,5 +9,6 @@
 
 # kubectl delete crd canaries.flagger.app
 
-helm delete flux -n fluxcd
+helm delete fluxcd -n fluxcd
 helm delete helm-operator -n fluxcd
+kubectl delete ns fluxcd

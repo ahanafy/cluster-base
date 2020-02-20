@@ -73,7 +73,7 @@ EOF
 
 echo ">>> Installing Helm Operator"
 helm upgrade -i helm-operator fluxcd/helm-operator --wait --cleanup-on-fail \
---set git.ssh.secretName=flux-git-deploy \
+--set git.ssh.secretName=fluxcd-git-deploy \
 --set helm.versions=v3 \
 -f ${TEMP}/repositories.yaml \
 --namespace fluxcd
