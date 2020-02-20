@@ -16,3 +16,9 @@ spec:
         secretName: fluxcd-git-deploy
     helm:
       versions: v3
+    valuesFrom:
+    - chartFileRef:
+        path: repositories.yaml # mandatory
+        # If set to true successful retrieval of the values file is no
+        # longer mandatory
+        optional: true 
