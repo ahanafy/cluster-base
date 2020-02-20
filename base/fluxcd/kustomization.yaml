@@ -1,0 +1,6 @@
+namespace: fluxcd
+resources:
+  - fluxcd.yaml
+  - helm-operator.yaml
+  - namespace.yaml
+  - repositories-configmap.yaml

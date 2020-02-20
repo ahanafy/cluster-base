@@ -1,10 +1,10 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: flux
-  namespace: flux
+  name: fluxcd
+  namespace: fluxcd
 spec:
-  releaseName: flux
+  releaseName: fluxcd
   chart:
     repository: https://charts.fluxcd.io
     version: 1.2.0
@@ -16,6 +16,6 @@ spec:
       branch: 'master'
       pollInterval: '1m'
       readonly: TRUE
-      name: 'Flux Operator'
+      name: 'Fluxcd Operator'
     registry:
       pollInterval: '1m'

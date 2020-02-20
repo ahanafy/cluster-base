@@ -1,0 +1,23 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: helm-operator
+  namespace: fluxcd
+spec:
+  releaseName: helm-operator
+  chart:
+    repository: https://charts.fluxcd.io
+    version: 0.7.0
+    name: helm-operator
+  values:
+    chartsSyncInterval: 3m
+    git:
+      ssh:
+        secretName: fluxcd-git-deploy
+    helm:
+      versions: v3
+  valuesFrom:
+  - configMapKeyRef:
+      name: repositories-values 
+      key: repositories.yaml
+      optional: true
