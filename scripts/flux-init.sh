@@ -14,7 +14,7 @@ fi
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 # HTTPS git.url format
-REPO_URL='https://github.com/ahanafy/cluster-base.git'
+REPO_URL=${1:-https://github.com/ahanafy/cluster-base.git}
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
 REPO_BRANCH='master'
