@@ -25,7 +25,7 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_URL=${1:-https://github.com/ahanafy/cluster-base.git}
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
-REPO_BRANCH='sealedsecrets'
+REPO_BRANCH='master'
 REPO_PUBLIC=true
 
 echo ">>> Creating Flux Namespace"
