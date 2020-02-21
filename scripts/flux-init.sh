@@ -4,11 +4,19 @@ set -e
 
 if [[ ! -x "$(command -v kubectl)" ]]; then
     echo "kubectl not found"
+    echo ">>> download the latest from here: https://kubernetes.io/docs/tasks/tools/install-kubectl/"
     exit 1
 fi
 
 if [[ ! -x "$(command -v helm)" ]]; then
     echo "helm not found"
+    echo ">>> download the latest from here: https://github.com/helm/helm/releases"
+    exit 1
+fi
+
+if [[ ! -x "$(command -v kubeseal)" ]]; then
+    echo "kubeseal not found"
+    echo ">>> download the latest from here: https://github.com/bitnami-labs/sealed-secrets/releases"
     exit 1
 fi
 
@@ -17,7 +25,7 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_URL=${1:-https://github.com/ahanafy/cluster-base.git}
 # SSH git.url format
 # REPO_URL=${1:-git@github.com:stefanprodan/gitops-istio}
-REPO_BRANCH='master'
+REPO_BRANCH='sealedsecrets'
 REPO_PUBLIC=true
 
 echo ">>> Creating Flux Namespace"
