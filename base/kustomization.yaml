@@ -1,4 +1,4 @@
 namespace: fluxcd
 bases:
   - ./fluxcd/
-  - ./sealedsecrets/
+  - ./sealed-secrets/
