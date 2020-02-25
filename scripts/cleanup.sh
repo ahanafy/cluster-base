@@ -11,4 +11,6 @@
 
 helm delete fluxcd -n fluxcd
 helm delete helm-operator -n fluxcd
+helm delete sealed-secrets -n kube-system
+
 kubectl delete ns fluxcd
