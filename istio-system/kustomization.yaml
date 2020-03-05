@@ -3,4 +3,4 @@ resources:
   - istio_v1beta1_istio.yaml
 bases:
   - github.com/banzaicloud/istio-operator/config?ref=release-1.4
-  - github.com/banzaicloud/istio-operator/config/overlays/basic?ref=release-1.4
+  - github.com/banzaicloud/istio-operator/config/overlays/prometheus-scraping-enabled?ref=release-1.4
