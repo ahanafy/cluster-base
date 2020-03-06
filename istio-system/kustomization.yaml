@@ -1,2 +1,3 @@
 resources:
-- istio-hr.yaml
+- istio-init.yaml
+- istio.yaml
