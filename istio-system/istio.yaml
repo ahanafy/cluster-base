@@ -87,5 +87,5 @@ spec:
             memory: 256Mi
       controlPlaneSecurityEnabled: false
       mtls:
-        enabled: false
+        enabled: true
       useMCP: true
