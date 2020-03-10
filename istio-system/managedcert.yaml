@@ -2,6 +2,7 @@ apiVersion: networking.gke.io/v1beta1
 kind: ManagedCertificate
 metadata:
   name: bookinfo
+  namespace: istio-system
 spec:
   domains:
     - bookinfo.fluxcd.sasstaeng.sascloud.io
