@@ -1,0 +1,4 @@
+resources:
+- istio-init.yaml
+- istio.yaml
+- istio-ns.yaml
