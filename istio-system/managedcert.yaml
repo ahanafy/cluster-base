@@ -1,0 +1,7 @@
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: bookinfo
+spec:
+  domains:
+    - bookinfo.fluxcd.sasstaeng.sascloud.io
