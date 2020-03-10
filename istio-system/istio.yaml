@@ -26,7 +26,7 @@ spec:
     gateways:
       enabled: true
       istio-ingressgateway:
-        type: LoadBalancer
+        type: NodePort
         autoscaleEnabled: false
         autoscaleMax: 1
 
