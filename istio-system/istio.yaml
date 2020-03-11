@@ -76,8 +76,6 @@ spec:
 
     # common settings
     global:
-      k8sIngress:
-        enabled: true
       # sidecar settings
       proxy:
         resources:
