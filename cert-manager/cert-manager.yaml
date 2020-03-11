@@ -9,13 +9,3 @@ spec:
     repository: https://charts.jetstack.io
     version: v0.13.1
     name: cert-manager
-  values:
-    replicaCount: 1
-    git:
-      url: 'https://github.com/ahanafy/cluster-base.git'
-      branch: 'master'
-      pollInterval: '1m'
-      readonly: TRUE
-      name: 'Fluxcd Operator'
-    registry:
-      pollInterval: '1m'
