@@ -4,7 +4,7 @@ items:
   kind: Issuer
   metadata:
     name: selfsigned-issuer
-    namespace: cert-manager
+    namespace: istio-system
   spec:
     selfSigned: {}
 kind: List
