@@ -27,6 +27,8 @@ spec:
       enabled: true
       istio-ingressgateway:
         type: LoadBalancer
+        # If you have a static IP
+        loadBalancerIP: 34.96.104.169
         autoscaleEnabled: false
         autoscaleMax: 1
         sds:
@@ -35,6 +37,7 @@ spec:
     # sidecar-injector webhook configuration
     sidecarInjectorWebhook:
       enabled: true
+      rewriteAppHTTPProbe: true
 
     # security configuration
     security:
