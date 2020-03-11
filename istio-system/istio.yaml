@@ -29,6 +29,8 @@ spec:
         type: LoadBalancer
         autoscaleEnabled: false
         autoscaleMax: 1
+        sds:
+          enabled: true
 
     # sidecar-injector webhook configuration
     sidecarInjectorWebhook:
