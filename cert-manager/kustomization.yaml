@@ -1,5 +1,4 @@
 resources:
-  - cert-gw.yaml
   - cert-manager-ns.yaml
   - cert-manager.yaml
   - certificate.yaml
