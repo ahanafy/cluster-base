@@ -27,8 +27,7 @@ spec:
       enabled: true
       istio-ingressgateway:
         type: LoadBalancer
-        # If you have a static IP
-        loadBalancerIP: 34.96.104.169
+        # loadBalancerIP: $IP
         autoscaleEnabled: false
         autoscaleMax: 1
         sds:
