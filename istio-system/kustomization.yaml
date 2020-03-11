@@ -3,7 +3,6 @@ resources:
 - istio.yaml
 - istio-ns.yaml
 - health-vs.yaml
-- ingress-gw.yaml
 - ingress.yaml
 - managedcert.yaml
 - staticip.yaml
