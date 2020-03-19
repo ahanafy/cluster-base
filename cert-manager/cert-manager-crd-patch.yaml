@@ -1,0 +1,97 @@
+---    
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: certificaterequests.cert-manager.io
+spec:
+  preserveUnknownFields: null
+
+---
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: certificates.cert-manager.io
+spec:
+  preserveUnknownFields: null
+
+---
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: challenges.acme.cert-manager.io
+spec:
+  preserveUnknownFields: null
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            solver:
+              properties:
+                dns01:
+                  properties:
+                    webhook:
+                      properties:
+                        config:
+                          x-kubernetes-preserve-unknown-fields: null
+
+---
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: clusterissuers.cert-manager.io
+spec:
+  preserveUnknownFields: null
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            acme:
+              properties:
+                solvers:
+                  items:
+                    properties:
+                      dns01:
+                        properties:
+                          webhook:
+                            properties:
+                              config:
+                                x-kubernetes-preserve-unknown-fields: null
+
+---
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: issuers.cert-manager.io
+spec:
+  preserveUnknownFields: null
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            acme:
+              properties:
+                solvers:
+                  items:
+                    properties:
+                      dns01:
+                        properties:
+                          webhook:
+                            properties:
+                              config:
+                                x-kubernetes-preserve-unknown-fields: null
+
+---
+
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: orders.acme.cert-manager.io
+spec:
+  preserveUnknownFields: null

@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: selfsigned-cert
+  namespace: istio-system
+spec:
+  dnsNames:
+    - bookinfo.fluxcd.sasstaeng.sascloud.io
+  secretName: selfsigned-cert-tls
+  issuerRef:
+    name: selfsigned-issuer
+    kind: Issuer

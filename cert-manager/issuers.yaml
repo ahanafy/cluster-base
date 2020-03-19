@@ -1,0 +1,10 @@
+apiVersion: v1
+items:
+- apiVersion: cert-manager.io/v1alpha2
+  kind: Issuer
+  metadata:
+    name: selfsigned-issuer
+    namespace: istio-system
+  spec:
+    selfSigned: {}
+kind: List

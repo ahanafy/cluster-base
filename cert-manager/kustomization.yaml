@@ -1,0 +1,10 @@
+resources:
+  - cert-gw.yaml
+  - cert-manager-ns.yaml
+  - cert-manager.yaml
+  - certificate.yaml
+  - issuers.yaml
+  - v0.13.1-00-crds.yaml  
+
+patchesStrategicMerge:
+  - cert-manager-crd-patch.yaml

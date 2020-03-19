@@ -28,6 +28,14 @@ data:
           url: https://storage.googleapis.com/istio-release/releases/1.4.3/charts
           username: ""
         - caFile: ""
+          cache: jetstack-index.yaml
+          certFile: ""
+          keyFile: ""
+          name: jetstack
+          password: ""
+          url: https://charts.jetstack.io
+          username: ""          
+        - caFile: ""
           cache: flagger-index.yaml
           certFile: ""
           keyFile: ""

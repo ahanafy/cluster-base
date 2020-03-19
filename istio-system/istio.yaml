@@ -27,12 +27,16 @@ spec:
       enabled: true
       istio-ingressgateway:
         type: LoadBalancer
+        # loadBalancerIP: $IP
         autoscaleEnabled: false
         autoscaleMax: 1
+        sds:
+          enabled: true
 
     # sidecar-injector webhook configuration
     sidecarInjectorWebhook:
       enabled: true
+      rewriteAppHTTPProbe: true
 
     # security configuration
     security:
@@ -76,6 +80,9 @@ spec:
 
     # common settings
     global:
+      # Ensure that the Istio pods are only scheduled to run on Linux nodes
+      defaultNodeSelector:
+        beta.kubernetes.io/os: linux
       # sidecar settings
       proxy:
         resources:
@@ -89,3 +96,7 @@ spec:
       mtls:
         enabled: true
       useMCP: true
+      # k8sIngress:
+      #   enabled: true
+      #   enableHttps: true
+      #   gatewayName: ingressgateway
