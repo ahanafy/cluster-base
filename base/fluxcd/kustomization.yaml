@@ -1,5 +1,5 @@
-namespace: fluxcd
 resources:
-  - fluxcd.yaml
   - namespace.yaml
-  - repositories-configmap.yaml
+bases:
+- ./fluxcd/
+- ./helm-operator/
