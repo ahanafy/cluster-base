@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   dnsNames:
-    - bookinfo.fluxcd.sasstaeng.sascloud.io
+    - '*.xip.io'
   secretName: selfsigned-cert-tls
   issuerRef:
     name: selfsigned-issuer
